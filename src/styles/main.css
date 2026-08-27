@@ -1,0 +1,45 @@
+html {
+  background-color: #f2f2f2;
+  font-size: 14px;
+  line-height: 1;
+
+  /* 禁止双击放大 */
+  touch-action: manipulation;
+  color: #0b1526;
+}
+.van-icon {
+  font-size: 18px;
+}
+
+img {
+  -webkit-user-drag: none;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+html.dark {
+  background: #121212;
+}
+
+/* vant4的 Toast 和 Popup 样式冲突,会导致 Toast 变成白底 */
+.van-popup.van-toast {
+  background: var(--van-toast-background) !important;
+  box-sizing: content-box !important;
+  /* 下面3条css,影响不大 */
+  transition: all var(--van-duration-fast) !important;
+  width: var(--van-toast-default-width) !important;
+  max-width: var(--van-toast-max-width) !important;
+}
+.van-popup.van-toast .van-toast__icon {
+  font-size: var(--van-toast-icon-size) !important;
+}
+
+.pb-ios {
+  padding-bottom: constant(safe-area-inset-bottom); /* 兼容 iOS < 11.2 */
+  padding-bottom: env(safe-area-inset-bottom); /* 兼容 iOS >= 11.2 */
+}

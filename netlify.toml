@@ -1,0 +1,26 @@
+[build]
+# 构建命令，例如使用 Next.js 或者其它静态站点生成器
+command = "npm run build:h5"
+# 发布目录，表示构建后的文件将被发布到此目录
+publish = "dist/build/h5"
+
+[[headers]]
+# 示例：为所有的 .html 文件设置缓存控制
+for = "/**.html"
+
+[headers.values]
+Cache-Control = "public, max-age=0, must-revalidate"
+
+[[redirects]]
+# 示例：将 /api 接口代理到 http://api-demo
+from = "/api-social-app-interface/*"
+to = "https://m1.apifoxmock.com/m1/5142882-4806818-default/:splat"
+status = 200
+force = true
+
+# [[redirects]]
+#  # 重定向所有路径到 index.html 防止history刷新404
+#  from = "/*"
+#  to = "/index.html"
+#  status = 200
+#

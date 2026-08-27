@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover, user-scalable=no"
+    />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title><%- title %></title>
+    <meta name="description" content="Opinionated Vite Starter Template" />
+
+    <!-- 指定启动屏幕图像 -->
+    <link rel="apple-touch-startup-image" href="/favicon.svg" />
+    <!-- 添加启动图标标题 -->
+    <meta name="apple-mobile-web-app-title" content="AppTitle" />
+    <!-- 更改状态栏的外观 -->
+    <!-- <meta name="apple-mobile-web-app-status-bar-style" content="light" /> -->
+    <!-- 隐藏Safari用户界面组件 -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+  </head>
+  <body class="font-sans dark:text-white dark:bg-hex-121212">
+    <div id="app">loading...</div>
+    <noscript>
+      <div>Please enable JavaScript to use this application.</div>
+    </noscript>
+    <script>
+      ;(function () {
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        const setting = localStorage.getItem('color-schema') || 'auto'
+        if (setting === 'dark' || (prefersDark && setting !== 'light'))
+          document.documentElement.classList.toggle('dark', true)
+      })()
+    </script>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
